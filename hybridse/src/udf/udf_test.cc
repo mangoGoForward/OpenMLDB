@@ -494,6 +494,17 @@ TEST_F(UdfTest, TimestampToString) {
     }
 }
 
+TEST_F(UdfTest, Locate) {
+    {
+        int32_t loc = udf::v1::locate(codec::StringRef("bar"), codec::StringRef("foobarbar"));
+        ASSERT_EQ(4, loc);
+    }
+    {
+        int32_t loc = udf::v1::locate(codec::StringRef("bar"), codec::StringRef("foobarbar"), 5);
+        ASSERT_EQ(7, loc);
+    }
+}
+
 template <class Ret, class... Args>
 void CheckUdf(UdfLibrary* library, const std::string& name, Ret&& expect,
               Args&&... args) {
