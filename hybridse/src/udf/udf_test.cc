@@ -500,7 +500,8 @@ TEST_F(UdfTest, Locate) {
         ASSERT_EQ(4, loc);
     }
     {
-        int32_t loc = udf::v1::locate(StringRef("bar"), StringRef("foobarbar"), 5);
+        int32_t pos = 5;
+        int32_t loc = udf::v1::locate(StringRef("bar"), StringRef("foobarbar"), pos);
         ASSERT_EQ(7, loc);
     }
 }
