@@ -203,6 +203,9 @@ struct IncOne {
     V operator()(V i) { return i + 1; }
 };
 
+int32_t locate(StringRef *substr, StringRef *str);
+int32_t locate(StringRef *substr, StringRef *str, int32_t pos);
+
 int32_t month(int64_t ts);
 int32_t month(Timestamp *ts);
 
