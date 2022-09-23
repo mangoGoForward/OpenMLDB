@@ -494,13 +494,6 @@ TEST_F(UdfTest, TimestampToString) {
     }
 }
 
-TEST_F(UdfTest, Locate) {
-    {
-        int32_t loc = udf::v1::locate(openmldb::base::StringRef("bar"), openmldb::base::StringRef("foobarbar"));
-        ASSERT_EQ(4, loc);
-    }
-}
-
 template <class Ret, class... Args>
 void CheckUdf(UdfLibrary* library, const std::string& name, Ret&& expect,
               Args&&... args) {
