@@ -496,7 +496,7 @@ TEST_F(UdfTest, TimestampToString) {
 
 TEST_F(UdfTest, Locate) {
     {
-        int32_t loc = udf::v1::locate(StringRef("bar"), StringRef("foobarbar"));
+        int32_t loc = udf::v1::locate(codec::StringRef("bar"), codec::StringRef("foobarbar"));
         ASSERT_EQ(4, loc);
     }
 }
